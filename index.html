@@ -1,86 +1,219 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Дмитрий & Валерия</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<title>Дмитрий & Валерия</title>
 
-    body{
-      font-family: Georgia, serif;
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      background: linear-gradient(rgba(0,0,0,0.35), url("hero.jpg") center cover no-repeat;
-      color:white;
-      overflow:hidden;
-    }
+<style>
 
-    .card{
-      background:rgba(255,255,255,.15);
-      backdrop-filter:blur(12px);
-      padding:50px;
-      border-radius:30px;
-      box-shadow:0 10px 40px rgba(0,0,0,.2);
-      max-width:700px;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    h1{
-      font-size:56px;
-      margin-bottom:15px;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    h2{
-      font-weight:normal;
-      margin-bottom:30px;
-      font-size:28px;
-    }
+body{
+    font-family: Georgia, serif;
+    color:white;
+    overflow-x:hidden;
+}
 
-    p{
-      font-size:20px;
-      line-height:1.7;
-      margin-bottom:35px;
-    }
+/* ---------- Первый экран ---------- */
 
-    button{
-      background:white;
-      color:#5a74c9;
-      border:none;
-      border-radius:50px;
-      padding:18px 45px;
-      font-size:18px;
-      cursor:pointer;
-      transition:.3s;
-    }
+.hero{
+    height:100vh;
 
-    button:hover{
-      transform:scale(1.05);
-    }
-  </style>
+    background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url("hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.card{
+
+    background:rgba(255,255,255,.14);
+
+    backdrop-filter:blur(10px);
+
+    padding:55px;
+
+    border-radius:30px;
+
+    width:90%;
+    max-width:700px;
+}
+
+h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:28px;
+    font-weight:normal;
+    margin-bottom:35px;
+}
+
+p{
+    font-size:21px;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+button{
+
+    background:white;
+
+    color:#6b83d8;
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:18px 45px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ---------- Остальная страница ---------- */
+
+section{
+
+    padding:90px 20px;
+
+    text-align:center;
+
+    color:#555;
+}
+
+section h2{
+
+    color:#6b83d8;
+
+    margin-bottom:25px;
+
+    font-size:40px;
+}
+
+.info{
+
+    max-width:900px;
+
+    margin:auto;
+
+    font-size:22px;
+
+    line-height:2;
+}
+
+</style>
+
 </head>
 
 <body>
 
+<section class="hero">
+
 <div class="card">
-  <h1>Дмитрий & Валерия</h1>
 
-  <h2>21 августа 2026</h2>
+<h1>Дмитрий & Валерия</h1>
 
-  <p>
-    Мы будем счастливы разделить с вами
-    один из самых важных дней нашей жизни.
-  </p>
+<h2>21 августа 2026</h2>
 
-  <button>Открыть приглашение</button>
+<p>
+
+Мы будем счастливы разделить с вами
+
+один из самых важных дней нашей жизни.
+
+</p>
+
+<button onclick="document.getElementById('invite').scrollIntoView({behavior:'smooth'})">
+
+Открыть приглашение
+
+</button>
+
 </div>
+
+</section>
+
+<section id="invite">
+
+<h2>Дорогие гости!</h2>
+
+<div class="info">
+
+<p>
+
+Совсем скоро состоится самый счастливый день нашей жизни,
+
+и нам будет очень приятно разделить его вместе с вами.
+
+</p>
+
+<p>
+
+📍 Регистрация брака
+
+<
+
+ЗАГС города Тихорецка
+
+<
+
+ул. Меньшикова, 84/3
+
+<
+
+21 августа 2026
+
+<
+
+14:30
+
+</p>
+
+<p>
+
+🥂 Банкет
+
+<b
+
+Кафе «Рандеву»
+
+<b
+станица Новолеушковская
+
+</p>
+
+</div>
+
+</section>
 
 </body>
 </html>
