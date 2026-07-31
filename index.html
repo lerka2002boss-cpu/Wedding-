@@ -6,6 +6,8 @@
 
 <title>Дмитрий & Валерия</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
 *{
@@ -19,197 +21,198 @@ html{
 }
 
 body{
-    font-family: Georgia, serif;
-    color:white;
+    font-family:'Montserrat',sans-serif;
+    background:#eef5ff;
     overflow-x:hidden;
+    color:#506da8;
 }
 
 /* ---------- Первый экран ---------- */
 
 .hero{
-    height:100vh;
 
-    background:
-    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
-    url("hero.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    min-height:100vh;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
-    text-align:center;
+
+    padding:40px 20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:linear-gradient(180deg,#f8fbff,#edf4ff);
+
+}
+
+/* Летающие частицы */
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background-image:
+radial-gradient(circle,rgba(255,255,255,.9) 2px,transparent 2px),
+radial-gradient(circle,rgba(255,255,255,.5) 1px,transparent 1px);
+
+background-size:120px 120px,70px 70px;
+
+animation:float 25s linear infinite;
+
+opacity:.6;
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+
+100%{transform:translateY(-120px);}
+
 }
 
 .card{
 
-    background:rgba(255,255,255,.14);
+position:relative;
 
-    backdrop-filter:blur(10px);
+z-index:2;
 
-    padding:55px;
+background:rgba(255,255,255,.88);
 
-    border-radius:30px;
+backdrop-filter:blur(10px);
 
-    width:90%;
-    max-width:700px;
+border-radius:30px;
+
+padding:35px;
+
+width:100%;
+
+max-width:520px;
+
+text-align:center;
+
+box-shadow:0 20px 50px rgba(120,150,220,.15);
+
+}
+
+.photo{
+
+width:100%;
+
+height:380px;
+
+object-fit:cover;
+
+border-radius:22px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+margin-bottom:30px;
+
 }
 
 h1{
-    font-size:60px;
-    margin-bottom:20px;
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:58px;
+
+font-weight:600;
+
+color:#6c86d8;
+
+margin-bottom:10px;
+
 }
 
-h2{
-    font-size:28px;
-    font-weight:normal;
-    margin-bottom:35px;
+.date{
+
+font-size:22px;
+
+margin-bottom:25px;
+
+letter-spacing:2px;
+
+color:#8aa0e5;
+
 }
 
-p{
-    font-size:21px;
-    line-height:1.8;
-    margin-bottom:40px;
+.subtitle{
+
+font-size:18px;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+color:#6b79a8;
+
 }
 
 button{
 
-    background:white;
+background:#8ca8ef;
 
-    color:#6b83d8;
+color:white;
 
-    border:none;
+border:none;
 
-    border-radius:50px;
+padding:18px 42px;
 
-    padding:18px 45px;
+font-size:17px;
 
-    font-size:18px;
+border-radius:50px;
 
-    cursor:pointer;
+cursor:pointer;
 
-    transition:.3s;
+transition:.3s;
+
+font-family:'Montserrat',sans-serif;
+
 }
 
 button:hover{
 
-    transform:scale(1.05);
+transform:translateY(-3px);
 
-}
+box-shadow:0 10px 25px rgba(140,168,239,.35);
 
-/* ---------- Остальная страница ---------- */
-
-section{
-
-    padding:90px 20px;
-
-    text-align:center;
-
-    color:#555;
-}
-
-section h2{
-
-    color:#6b83d8;
-
-    margin-bottom:25px;
-
-    font-size:40px;
-}
-
-.info{
-
-    max-width:900px;
-
-    margin:auto;
-
-    font-size:22px;
-
-    line-height:2;
 }
 
 </style>
-
-</head>
-
 <body>
 
 <section class="hero">
 
 <div class="card">
 
-<h1>Дмитрий & Валерия</h1>
+<img src="hero.jpg" class="photo" alt="Дмитрий и Валерия">
 
-<h2>21 августа 2026</h2>
+<h1>Дмитрий &amp; Валерия</h1>
 
-<p>
+<div class="date">
+21 августа 2026
+</div>
 
+<div class="subtitle">
 Мы будем счастливы разделить с вами
 
 один из самых важных дней нашей жизни.
-
-</p>
-
-<button onclick="document.getElementById('invite').scrollIntoView({behavior:'smooth'})">
-
-Открыть приглашение
-
-</button>
-
 </div>
 
-</section>
-
-<section id="invite">
-
-<h2>Дорогие гости!</h2>
-
-<div class="info">
-
-<p>
-
-Совсем скоро состоится самый счастливый день нашей жизни,
-
-и нам будет очень приятно разделить его вместе с вами.
-
-</p>
-
-<p>
-
-📍 Регистрация брака
-
-<
-
-ЗАГС города Тихорецка
-
-<
-
-ул. Меньшикова, 84/3
-
-<
-
-21 августа 2026
-
-<
-
-14:30
-
-</p>
-
-<p>
-
-🥂 Банкет
-
-<b
-
-Кафе «Рандеву»
-
-<b
-станица Новолеушковская
-
-</p>
+<button>
+Открыть приглашение
+</button>
 
 </div>
 
@@ -217,3 +220,5 @@ section h2{
 
 </body>
 </html>
+
+
