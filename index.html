@@ -309,6 +309,34 @@ footer{
 75%{transform:translate(-90vw,40px);}
 100%{transform:translate(-120vw,-120px);}
 }
+/* ===========================
+   Плавное появление блоков
+=========================== */
+
+.hero,
+.welcome,
+.countdown,
+.ceremony,
+.banquet,
+.rsvp,
+footer{
+
+    opacity:0;
+    transform:translateY(60px);
+
+    transition:
+    opacity .9s ease,
+    transform .9s ease;
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
 </style>
 
 </head>
@@ -535,6 +563,29 @@ window.addEventListener("scroll", function () {
         "center " + (scroll * 0.08) + "px";
 
 });
+</script>
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{
+threshold:0.15
+});
+
+document.querySelectorAll(
+".hero,.welcome,.countdown,.ceremony,.banquet,.rsvp,footer"
+).forEach(el=>observer.observe(el));
+
 </script>
 </body>
 </html>
