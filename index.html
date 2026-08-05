@@ -23,7 +23,8 @@ html{
 
 body{
     font-family:'Montserrat',sans-serif;
-    background:#eef5ff;
+    background:linear-gradient(180deg,#f8fbff,#eef5ff,#edf4ff);
+    background-size:100% 200%;
     color:#506da8;
     overflow-x:hidden;
 }
@@ -525,5 +526,15 @@ setInterval(updateTimer,1000);
     <img src="butterfly3.png" class="butterfly b3">
     <img src="butterfly4.png" class="butterfly b4">
 </div>
+<script>
+window.addEventListener("scroll", function () {
+
+    const scroll = window.pageYOffset;
+
+    document.body.style.backgroundPosition =
+        "center " + (scroll * 0.15) + "px";
+
+});
+</script>
 </body>
 </html>
