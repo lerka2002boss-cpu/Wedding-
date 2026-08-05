@@ -313,7 +313,6 @@ footer{
    Плавное появление блоков
 =========================== */
 
-.hero,
 .welcome,
 .countdown,
 .ceremony,
@@ -589,7 +588,7 @@ const observer = new IntersectionObserver((entries)=>{
 });
 
 document.querySelectorAll(
-".hero,.welcome,.countdown,.ceremony,.banquet,.rsvp,footer"
+".welcome,.countdown,.ceremony,.banquet,.rsvp,footer"
 ).forEach(el=>observer.observe(el));
 
 </script>
