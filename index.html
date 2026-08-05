@@ -527,59 +527,65 @@ target="_blank">
 
 </footer>
 <script>
-const weddingDate = new Date("August 21, 2026 00:00:00").getTime();
+// ====================
+// Таймер
+// ====================
 
-function updateTimer() {
+const weddingDate = new Date("2026-08-21T00:00:00").getTime();
 
-    const now = new Date().getTime();
+function updateTimer(){
+
+    const now = Date.now();
     const distance = weddingDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    if(distance <= 0){
+        return;
+    }
 
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+    const days = Math.floor(distance/(1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance%(1000*60))/1000);
+
+    document.getElementById("days").textContent = String(days).padStart(2,"0");
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+
 }
 
 updateTimer();
 setInterval(updateTimer,1000);
-</script>
-<div class="butterflies">
-    <img src="butterfly1.png" class="butterfly b1">
-    <img src="butterfly2.png" class="butterfly b2">
-    <img src="butterfly3.png" class="butterfly b3">
-    <img src="butterfly4.png" class="butterfly b4">
-</div>
-<script>
-window.addEventListener("scroll", function () {
 
-    const scroll = window.pageYOffset;
+// ====================
+// Параллакс
+// ====================
+
+window.addEventListener("scroll",()=>{
 
     document.body.style.backgroundPosition =
-        "center " + (scroll * 0.08) + "px";
+    "center " + window.pageYOffset*0.08 + "px";
 
 });
-</script>
-<script>
+
+// ====================
+// Появление блоков
+// ====================
 
 const observer = new IntersectionObserver((entries)=>{
 
-entries.forEach(entry=>{
+    entries.forEach(entry=>{
 
-if(entry.isIntersecting){
+        if(entry.isIntersecting){
 
-entry.target.classList.add("show");
+            entry.target.classList.add("show");
 
-}
+        }
 
-});
+    });
 
 },{
-threshold:0.15
+    threshold:0.08
 });
 
 document.querySelectorAll(
@@ -587,5 +593,11 @@ document.querySelectorAll(
 ).forEach(el=>observer.observe(el));
 
 </script>
+<div class="butterflies">
+    <img src="butterfly1.png" class="butterfly b1">
+    <img src="butterfly2.png" class="butterfly b2">
+    <img src="butterfly3.png" class="butterfly b3">
+    <img src="butterfly4.png" class="butterfly b4">
+</div>
 </body>
 </html>
